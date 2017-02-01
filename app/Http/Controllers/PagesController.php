@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class ExampleController extends Controller
+class PagesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -14,5 +14,7 @@ class ExampleController extends Controller
         //
     }
 
-    //
+    public function index(){
+        return view('pages.index');
+    }
 }
