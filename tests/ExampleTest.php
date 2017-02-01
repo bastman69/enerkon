@@ -2,20 +2,16 @@
 
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
+use Laravel\Lumen\Testing\Concerns;
 
 class ExampleTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    
+    public function testRouting()
     {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(), $this->response->getContent()
-        );
+      $this->get('/');
+      $this->seeStatusCode(200);
+      $this->get('/nothing');
+      $this->seeStatusCode(404);
     }
 }
